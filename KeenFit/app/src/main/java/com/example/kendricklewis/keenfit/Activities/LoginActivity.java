@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity
 
     //checking the current auth state
     private FirebaseAuth mAuth;
+    public static FirebaseUser mCurrentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -62,7 +63,7 @@ public class LoginActivity extends AppCompatActivity
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toasty.success(getApplicationContext(), "User was signed in", Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            mCurrentUser = mAuth.getCurrentUser();
 
 
                             //move to the next page
