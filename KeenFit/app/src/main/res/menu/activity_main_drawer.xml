@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_addfood"
+            android:icon="@drawable/icon_addfood"
+            android:title="Add Food"/>
+        <item
+            android:id="@+id/nav_entries"
+            android:icon="@drawable/icon_entrys"
+            android:title="Entries"/>
+        <item
+            android:id="@+id/nav_mealhistory"
+            android:icon="@drawable/icon_mealhistory"
+            android:title="Meal History"/>
+        <item
+            android:id="@+id/nav_goals"
+            android:icon="@drawable/icon_goals"
+            android:title="Goals"/>
+
+        <item
+            android:id="@+id/nav_friends"
+            android:icon="@drawable/icon_friends"
+            android:title="Friends"/>
+
+    </group>
+
+    <item android:title="More Options">
+        <menu>
+            <item
+                android:id="@+id/nav_aboutus"
+                android:icon="@drawable/icon_main"
+                android:title="aboutus"/>
+            <item
+                android:id="@+id/nav_signout"
+                android:icon="@drawable/icon_signout"
+                android:title="Sign Out"/>
+        </menu>
+    </item>
+
+</menu>

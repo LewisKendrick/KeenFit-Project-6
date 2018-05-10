@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAppBackground">
+
+    <FrameLayout
+        android:id="@+id/h_Topbar_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+    <ImageButton
+        android:id="@+id/menuBtn"
+        android:layout_width="91dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/h_Topbar_background"
+        app:layout_constraintStart_toStartOf="@+id/h_Topbar_background"
+        app:layout_constraintTop_toTopOf="@+id/h_Topbar_background"
+        app:srcCompat="@drawable/icon_1" />
+
+    <TextView
+        android:id="@+id/Title_lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="KeenFit"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/h_Greeting_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/h_Topbar_background"
+        app:layout_constraintEnd_toEndOf="@+id/h_Topbar_background"
+        app:layout_constraintStart_toEndOf="@+id/menuBtn"
+        app:layout_constraintTop_toBottomOf="@+id/Title_lbl" />
+
+    <FrameLayout
+        android:id="@+id/h_Summary_frame"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h_Topbar_background">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/h_addFood_Btn"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="8dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toTopOf="@+id/entries_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <ImageView
+        android:id="@+id/addfood_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorLightGrey"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/h_addFood_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_addFood_Btn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/h_addFood_Btn"
+        app:layout_constraintTop_toTopOf="@+id/h_addFood_Btn"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_addfood" />
+
+    <TextView
+        android:id="@+id/addFood_lbl"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:background="@color/colorLightGrey"
+        android:text="Add Food"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/h_addFood_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_addFood_Btn"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="@+id/h_addFood_Btn"
+        app:layout_constraintTop_toBottomOf="@+id/addfood_image" />
+
+    <Button
+        android:id="@+id/h_entries_Btn"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:background="#00dfdfdf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/entries_image"
+        android:layout_width="117dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorLightGrey"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/h_entries_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_entries_Btn"
+        app:layout_constraintStart_toStartOf="@+id/h_entries_Btn"
+        app:layout_constraintTop_toTopOf="@+id/h_entries_Btn"
+        app:srcCompat="@drawable/icon_entrys" />
+
+    <TextView
+        android:id="@+id/entires_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginStart="2dp"
+        android:background="@color/colorLightGrey"
+        android:text="Entries"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/h_entries_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_entries_Btn"
+        app:layout_constraintStart_toStartOf="@+id/h_entries_Btn"
+        app:layout_constraintTop_toBottomOf="@+id/entries_image" />
+
+    <Button
+        android:id="@+id/h_Goals_Btn"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="#00dfdfdf"
+        app:layout_constraintBottom_toBottomOf="@+id/entires_lbl"
+        app:layout_constraintStart_toEndOf="@+id/h_entries_Btn"
+        app:layout_constraintTop_toTopOf="@+id/entries_image"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/goals_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorLightGrey"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/h_Goals_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_Goals_Btn"
+        app:layout_constraintStart_toStartOf="@+id/h_Goals_Btn"
+        app:layout_constraintTop_toTopOf="@+id/h_Goals_Btn"
+        app:srcCompat="@drawable/icon_goals" />
+
+    <TextView
+        android:id="@+id/goals_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="Goals"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/h_Goals_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_Goals_Btn"
+        app:layout_constraintStart_toStartOf="@+id/h_Goals_Btn"
+        app:layout_constraintTop_toBottomOf="@+id/goals_image" />
+
+    <Button
+        android:id="@+id/h_Friends_Btn"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="19dp"
+        android:background="#00dfdfdf"
+        app:layout_constraintBottom_toBottomOf="@+id/entires_lbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h_Goals_Btn"
+        app:layout_constraintTop_toTopOf="@+id/entries_image" />
+
+    <ImageView
+        android:id="@+id/friends_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorLightGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/h_Friends_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_Friends_Btn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/h_Friends_Btn"
+        app:layout_constraintTop_toTopOf="@+id/h_Friends_Btn"
+        app:srcCompat="@drawable/icon_friends" />
+
+    <TextView
+        android:id="@+id/friends_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="Friends"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/h_Friends_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_Friends_Btn"
+        app:layout_constraintStart_toStartOf="@+id/h_Friends_Btn"
+        app:layout_constraintTop_toBottomOf="@+id/friends_image" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="351dp" />
+
+    <Button
+        android:id="@+id/h_MealHistory_Btn"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="72dp"
+        android:background="#00aaaaaa"
+        app:layout_constraintBottom_toBottomOf="@+id/addFood_lbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/addfood_image"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/mealhistory_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorLightGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/h_MealHistory_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_MealHistory_Btn"
+        app:layout_constraintStart_toStartOf="@+id/h_MealHistory_Btn"
+        app:layout_constraintTop_toTopOf="@+id/h_MealHistory_Btn"
+        app:srcCompat="@drawable/icon_mealhistory" />
+
+    <TextView
+        android:id="@+id/mealhistory_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="Meal History"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/h_MealHistory_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_MealHistory_Btn"
+        app:layout_constraintStart_toStartOf="@+id/h_MealHistory_Btn"
+        app:layout_constraintTop_toBottomOf="@+id/mealhistory_image" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/h_Summary_frame"
+        app:layout_constraintTop_toBottomOf="@+id/h_Summary_frame" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KeenFit</string>
+    <string name="open_drawer">open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+</resources>

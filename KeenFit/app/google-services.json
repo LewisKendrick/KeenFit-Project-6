@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "957211648159",
+    "firebase_url": "https://keenfit0800.firebaseio.com",
+    "project_id": "keenfit0800",
+    "storage_bucket": "keenfit0800.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957211648159:android:60d142b59562b116",
+        "android_client_info": {
+          "package_name": "com.example.kendricklewis.keenfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957211648159-gki1robd9e6sron6ig3vb9nt1ee8ct8i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kendricklewis.keenfit",
+            "certificate_hash": "29385816c4b420dc8cca73348455f60b5efd42df"
+          }
+        },
+        {
+          "client_id": "957211648159-eof9pgdignboiceicojruc07r0tjcml8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXFFpy01AlLdLxp0sKSQoZ2V83VCUzDow"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957211648159-eof9pgdignboiceicojruc07r0tjcml8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "957211648159-sqgcrubbd63obn2leufn1qijl5fvhtf7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "comm-classnotes.LewisKendrick-KeenFit"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
