@@ -10,28 +10,16 @@ public class CurrentUser
     private String g_name;
     private int id_picture;
     private double weight;
-    private HashMap<String, Double> goals;
+    private Goal goals;
     private double current_Calories;
     private double average_daily;
     private double average_weekly;
     private double average_byWeekly;
+    private ArrayList<Meal> meals;
 
     public CurrentUser()
     {
 
-    }
-
-    public CurrentUser(String name, String g_name, int id_picture, double weight, HashMap<String, Double> goals, double current_Calories, double average_daily, double average_weekly, double average_byWeekly)
-    {
-        this.name = name;
-        this.g_name = g_name;
-        this.id_picture = id_picture;
-        this.weight = weight;
-        this.goals = goals;
-        this.current_Calories = current_Calories;
-        this.average_daily = average_daily;
-        this.average_weekly = average_weekly;
-        this.average_byWeekly = average_byWeekly;
     }
 
     public String getName() {
@@ -66,11 +54,11 @@ public class CurrentUser
         this.weight = weight;
     }
 
-    public HashMap<String, Double> getGoals() {
+    public Goal getGoals() {
         return goals;
     }
 
-    public void setGoals(HashMap<String, Double> goals) {
+    public void setGoals(Goal goals) {
         this.goals = goals;
     }
 
@@ -106,14 +94,152 @@ public class CurrentUser
         this.average_byWeekly = average_byWeekly;
     }
 
-    public class Goal
-    {
 
+    public ArrayList<Meal> getMeals() {
+        return meals;
     }
 
-    public class Meal
-    {
+    public void setMeals(ArrayList<Meal> meals) {
+        this.meals = meals;
+    }
 
+
+
+    /*
+    TODO: THIS IS MY GOALS CLASS
+    Goals Class
+
+     */
+
+    public static class Goal
+    {
+        private double total_calories;
+        private double total_carbs;
+        private double total_cholesterol;
+        private double total_dietary;
+        private double total_fat;
+        private double total_protein;
+        private double total_saturatedfat;
+        private double total_sodium;
+        private double total_sugars;
+
+        public Goal()
+        {
+
+        }
+
+        public double getTotal_calories() {
+            return total_calories;
+        }
+
+        public void setTotal_calories(double total_calories) {
+            this.total_calories = total_calories;
+        }
+
+        public double getTotal_carbs() {
+            return total_carbs;
+        }
+
+        public void setTotal_carbs(double total_carbs) {
+            this.total_carbs = total_carbs;
+        }
+
+        public double getTotal_cholesterol() {
+            return total_cholesterol;
+        }
+
+        public void setTotal_cholesterol(double total_cholesterol) {
+            this.total_cholesterol = total_cholesterol;
+        }
+
+        public double getTotal_dietary() {
+            return total_dietary;
+        }
+
+        public void setTotal_dietary(double total_dietary) {
+            this.total_dietary = total_dietary;
+        }
+
+        public double getTotal_fat() {
+            return total_fat;
+        }
+
+        public void setTotal_fat(double total_fat) {
+            this.total_fat = total_fat;
+        }
+
+        public double getTotal_protein() {
+            return total_protein;
+        }
+
+        public void setTotal_protein(double total_protein) {
+            this.total_protein = total_protein;
+        }
+
+        public double getTotal_saturatedfat() {
+            return total_saturatedfat;
+        }
+
+        public void setTotal_saturatedfat(double total_saturatedfat) {
+            this.total_saturatedfat = total_saturatedfat;
+        }
+
+        public double getTotal_sodium() {
+            return total_sodium;
+        }
+
+        public void setTotal_sodium(double total_sodium) {
+            this.total_sodium = total_sodium;
+        }
+
+        public double getTotal_sugars() {
+            return total_sugars;
+        }
+
+        public void setTotal_sugars(double total_sugars) {
+            this.total_sugars = total_sugars;
+        }
+    }
+
+        /*
+    TODO: THIS IS MY MEALS CLASS
+    MEALS Class
+
+     */
+
+    public static class Meal
+    {
+        private String id;
+        private String name;
+        private String brandname;
+        private String dateAdded;
+        private int servings;
+        private double calories;
+        private double carbs;
+        private double cholesterol;
+        private double dietary;
+        private double fat;
+        private double protein;
+        private double saturatedfat;
+        private double sodium;
+        private double sugars;
+
+        public Meal(String id, String name, String brandname, String dateAdded, int servings, double calories, double carbs, double cholesterol, double dietary, double fat, double protein, double saturatedfat, double sodium, double sugars) {
+            this.id = id;
+            this.name = name;
+            this.brandname = brandname;
+            this.dateAdded = dateAdded;
+            this.servings = servings;
+            this.calories = calories;
+            this.carbs = carbs;
+            this.cholesterol = cholesterol;
+            this.dietary = dietary;
+            this.fat = fat;
+            this.protein = protein;
+            this.saturatedfat = saturatedfat;
+            this.sodium = sodium;
+            this.sugars = sugars;
+        }
     }
 
 }

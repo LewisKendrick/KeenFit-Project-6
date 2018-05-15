@@ -103,47 +103,45 @@
 
     <TextView
         android:id="@+id/cals_Goals"
-        android:layout_width="0dp"
+        android:layout_width="60dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:text="/Cals"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/s_GoalTotal_Txt"
-        app:layout_constraintEnd_toEndOf="@+id/cals_Current"
-        app:layout_constraintStart_toStartOf="@+id/cals_Current"
+        app:layout_constraintStart_toEndOf="@+id/s_GoalTotal_Txt"
         app:layout_constraintTop_toTopOf="@+id/s_GoalTotal_Txt" />
 
     <TextView
         android:id="@+id/meals_cals"
-        android:layout_width="0dp"
+        android:layout_width="60dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:text="#"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/s_MealsToday_Txt"
-        app:layout_constraintEnd_toEndOf="@+id/cals_Goals"
-        app:layout_constraintStart_toStartOf="@+id/cals_Goals"
+        app:layout_constraintStart_toEndOf="@+id/s_MealsToday_Txt"
         app:layout_constraintTop_toTopOf="@+id/s_MealsToday_Txt" />
 
     <TextView
         android:id="@+id/dailyAvg"
-        android:layout_width="0dp"
+        android:layout_width="60dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:text="/Avg"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/s_DailyAverage_Txt"
-        app:layout_constraintEnd_toEndOf="@+id/meals_cals"
-        app:layout_constraintStart_toStartOf="@+id/meals_cals"
+        app:layout_constraintStart_toEndOf="@+id/s_DailyAverage_Txt"
         app:layout_constraintTop_toTopOf="@+id/s_DailyAverage_Txt" />
 
     <TextView
         android:id="@+id/cals_Current"
-        android:layout_width="0dp"
+        android:layout_width="60dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="/Cals"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/s_CurrentCal_Txt"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/s_CurrentCal_Txt"
         app:layout_constraintTop_toTopOf="@+id/s_CurrentCal_Txt" />
 

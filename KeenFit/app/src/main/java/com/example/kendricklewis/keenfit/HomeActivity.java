@@ -2,7 +2,6 @@ package com.example.kendricklewis.keenfit;
 
 import android.graphics.Color;
 import android.support.annotation.NonNull;
-import android.support.constraint.solver.widgets.Snapshot;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.kendricklewis.keenfit.Activities.LoginActivity;
 import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 import com.example.kendricklewis.keenfit.Fragments.Summary_Fragment;
 import com.google.firebase.database.DataSnapshot;
@@ -23,15 +21,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 import es.dmoral.toasty.Toasty;
 
 import static com.example.kendricklewis.keenfit.Activities.LoginActivity.mCurrentUser;
+import static com.example.kendricklewis.keenfit.Classes.CurrentUser.*;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
 
     private DrawerLayout drawer;
     public static String userID;
+    //grabing all my user info
+    public static CurrentUser currentUser = new CurrentUser();
 
 
 
@@ -64,16 +68,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        //grabing my data for displaying in realtime with updates and changes
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-
         userID = mCurrentUser.getUid();
 
+        //grabing my data for displaying in realtime with updates and changes
 
-        // Read from the database this gets called as soon as the method starts it will listen
-        // for anychanges
-        myRef.addValueEventListener(new ValueEventListener() {
+        /* MY FIREBASE DATABASE*/FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /* USER REFERENCE */ DatabaseReference userRef = database.getReference().child("Users").child(userID);
+
+
+        //TODO: GATHERS MY USER DATA
+        userRef.addValueEventListener(new ValueEventListener() //This method will fire whenever my database changes
+        {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -81,7 +86,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 //String value = dataSnapshot.getValue(String.class);
                 //Log.d("returned value:", "Value is: " + value);
 
-                gatherSnapshotData(dataSnapshot);
+                gatherUserData(dataSnapshot);
             }
 
             @Override
@@ -91,6 +96,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        //READS MEAL DATA FROM FIREBASE
+        /* GOAL REFERENCE */ DatabaseReference mealRef = database.getReference().child("Meals").child(userID);
+
+        mealRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //String value = dataSnapshot.getValue(String.class);
+                //Log.d("returned value:", "Value is: " + value);
+
+                gatherMealData(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("Error: ", "Failed to read value.", error.toException());
+            }
+        });
 
 
 
@@ -103,33 +128,116 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
-    private void gatherSnapshotData(DataSnapshot dataSnapshot)
+    private void gatherUserData(DataSnapshot dataSnapshot)
     {
-        //gathering all my information
-        for(DataSnapshot ds : dataSnapshot.getChildren())
+
+        try
         {
-            CurrentUser currentUser = new CurrentUser();
-            currentUser.setName(ds.child(userID).getValue(CurrentUser.class).getName());
+            //Grab the info out of the firebase one at a time and fill
+            String name = dataSnapshot.child("name").getValue(String.class);
+            String gName = dataSnapshot.child("g_name").getValue(String.class);
+            Integer id_picture = dataSnapshot.child("id_picture").getValue(Integer.class);
+            Double weight  = dataSnapshot.child("weight").getValue(Double.class);
+            Double currentCals = dataSnapshot.child("current_Calories").getValue(Double.class);
+            Double averageDaily = dataSnapshot.child("average_daily").getValue(Double.class);
+            Double averageWeekly = dataSnapshot.child("average_weekly").getValue(Double.class);
+            Double averageByWeekly = dataSnapshot.child("average_biWeekly").getValue(Double.class);
 
-            currentUser.setG_name(ds.child(userID).getValue(CurrentUser.class).getG_name());
+            //grabing goals out of firebase
+            DataSnapshot snapshot = dataSnapshot.child("goals");;
 
-            currentUser.setId_picture(ds.child(userID).getValue(CurrentUser.class).getId_picture());
+            double totalCals = snapshot.child("total_calories").getValue(Double.class);
+            double totalCarbs = snapshot.child("total_carbs").getValue(Double.class);
+            double totalCholesterol = snapshot.child("total_cholesterol").getValue(Double.class);
+            double totalDietary = snapshot.child("total_dietary").getValue(Double.class);
+            double totalFat = snapshot.child("total_fat").getValue(Double.class);
+            double totalProtein = snapshot.child("total_protein").getValue(Double.class);
+            double totalSaturated = snapshot.child("total_saturatedfat").getValue(Double.class);
+            double totalSodium = snapshot.child("total_sodium").getValue(Double.class);
+            double totalSugars = snapshot.child("total_sugars").getValue(Double.class);
 
-            currentUser.setWeight(ds.child(userID).getValue(CurrentUser.class).getWeight());
+            //* Setting the information into my user summary *//
+            currentUser.setName(name);
 
-            currentUser.setCurrent_Calories(ds.child(userID).getValue(CurrentUser.class).getCurrent_Calories());
+            currentUser.setG_name(gName);
 
-            currentUser.setAverage_daily(ds.child(userID).getValue(CurrentUser.class).getAverage_daily());
+            currentUser.setId_picture(id_picture);
 
-            currentUser.setAverage_weekly(ds.child(userID).getValue(CurrentUser.class).getAverage_weekly());
+            currentUser.setWeight(weight);
 
-            currentUser.setAverage_byWeekly(ds.child(userID).getValue(CurrentUser.class).getAverage_byWeekly());
+            currentUser.setCurrent_Calories(currentCals);
 
-           //TODO: currentUser.setGoals(ds.child(userID).getValue(CurrentUser.class).getGoals());
+            currentUser.setAverage_daily(averageDaily);
 
-            //currentUser.setName(ds.child(userID).getValue(CurrentUser.class).getName());
+            currentUser.setAverage_weekly(averageWeekly);
 
+            currentUser.setAverage_byWeekly(averageByWeekly);
+
+            //* Setting the goals*//
+            Goal updatedGoals = new Goal();
+
+            updatedGoals.setTotal_calories(totalCals);
+            updatedGoals.setTotal_carbs(totalCarbs);
+            updatedGoals.setTotal_cholesterol(totalCholesterol);
+            updatedGoals.setTotal_dietary(totalDietary);
+            updatedGoals.setTotal_fat(totalFat);
+            updatedGoals.setTotal_protein(totalProtein);
+            updatedGoals.setTotal_saturatedfat(totalSaturated);
+            updatedGoals.setTotal_sodium(totalSodium);
+            updatedGoals.setTotal_sugars(totalSugars);
+
+            currentUser.setGoals(updatedGoals);
+
+            //reseting my summary fragment to reflect new changes
+            getSupportFragmentManager().beginTransaction().replace(R.id.h_Summary_frame,
+                    Summary_Fragment.newInstance()).commit();
 
         }
+        catch (NullPointerException e)
+        {
+            Toasty.error(this, "Gathering info Failed", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void gatherMealData(DataSnapshot datasnapshot)
+    {
+        ArrayList<Meal> savedMeals = new ArrayList<>();
+
+       for (DataSnapshot aMeal: datasnapshot.getChildren())
+       {
+           try
+           {
+               String id =          aMeal.child("id").getValue(String.class);
+               String name =        aMeal.child("name").getValue(String.class);
+               String brandname =   aMeal.child("brandname").getValue(String.class);
+               String dateAdded =   aMeal.child("date").getValue(String.class);
+
+               Integer servings =   aMeal.child("servings").getValue(Integer.class);
+
+               Double calories =    aMeal.child("calories").getValue(Double.class);
+               Double carbs =       aMeal.child("carbs").getValue(Double.class);
+               Double cholesterol = aMeal.child("cholesterol").getValue(Double.class);
+               Double dietary =     aMeal.child("dietary").getValue(Double.class);
+               Double fat =         aMeal.child("fat").getValue(Double.class);
+               Double protein =     aMeal.child("protein").getValue(Double.class);
+               Double saturatedfat= aMeal.child("saturatedfat").getValue(Double.class);
+               Double sodium =      aMeal.child("sodium").getValue(Double.class);
+               Double sugars =      aMeal.child("sugars").getValue(Double.class);
+
+               CurrentUser.Meal databaseMeal =
+                       new CurrentUser.Meal(
+                               id, name, brandname, dateAdded, servings, calories, carbs,
+                               cholesterol, dietary, fat, protein, saturatedfat, sodium, sugars);
+
+               savedMeals.add(databaseMeal);
+
+           }
+           catch (NullPointerException e)
+           {
+             e.printStackTrace();
+           }
+       }
+
+       currentUser.setMeals(savedMeals);
     }
 }
