@@ -1,5 +1,6 @@
 package com.example.kendricklewis.keenfit;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.kendricklewis.keenfit.Activities.AddActivity;
 import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 import com.example.kendricklewis.keenfit.Fragments.Summary_Fragment;
 import com.google.firebase.database.DataSnapshot;
@@ -22,14 +24,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import es.dmoral.toasty.Toasty;
 
 import static com.example.kendricklewis.keenfit.Activities.LoginActivity.mCurrentUser;
 import static com.example.kendricklewis.keenfit.Classes.CurrentUser.*;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
 {
 
     private DrawerLayout drawer;
@@ -37,13 +38,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     //grabing all my user info
     public static CurrentUser currentUser = new CurrentUser();
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        setActionBar(null);
 
         Toasty.Config.getInstance().setSuccessColor(Color.GREEN).apply();
 
@@ -54,6 +54,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //setting buttons
+        findViewById(R.id.h_AddFood_btn).setOnClickListener(this);
+        findViewById(R.id.h_Entries_btn).setOnClickListener(this);
+        findViewById(R.id.h_Goals_btn).setOnClickListener(this);
+        findViewById(R.id.h_Friends_btn).setOnClickListener(this);
+        findViewById(R.id.h_MealHistory_btn).setOnClickListener(this);
 
         findViewById(R.id.menuBtn).setOnClickListener(new View.OnClickListener()
         {
@@ -77,47 +84,30 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
         //TODO: GATHERS MY USER DATA
+        // This method is called once with the initial value and again
+        // whenever data at this location is updated.
+        //String value = dataSnapshot.getValue(String.class);
+        //Log.d("returned value:", "Value is: " + value);
         userRef.addValueEventListener(new ValueEventListener() //This method will fire whenever my database changes
         {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                //String value = dataSnapshot.getValue(String.class);
-                //Log.d("returned value:", "Value is: " + value);
-
-                gatherUserData(dataSnapshot);
-            }
+            public void onDataChange(DataSnapshot dataSnapshot) { gatherUserData(dataSnapshot); }
 
             @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("Error: ", "Failed to read value.", error.toException());
-            }
+            public void onCancelled(DatabaseError error) { Log.w("Error: ", "Failed to read value.", error.toException()); }
         });
 
         //READS MEAL DATA FROM FIREBASE
         /* GOAL REFERENCE */ DatabaseReference mealRef = database.getReference().child("Meals").child(userID);
 
-        mealRef.addValueEventListener(new ValueEventListener() {
+        mealRef.addValueEventListener(new ValueEventListener()
+        {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                //String value = dataSnapshot.getValue(String.class);
-                //Log.d("returned value:", "Value is: " + value);
-
-                gatherMealData(dataSnapshot);
-            }
+            public void onDataChange(DataSnapshot dataSnapshot) { gatherMealData(dataSnapshot); }
 
             @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("Error: ", "Failed to read value.", error.toException());
-            }
+            public void onCancelled(DatabaseError error) { Log.w("Error: ", "Failed to read value.", error.toException()); }
         });
-
-
 
         getSupportFragmentManager().beginTransaction().replace(R.id.h_Summary_frame,
                 Summary_Fragment.newInstance()).commit();
@@ -239,5 +229,47 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
        }
 
        currentUser.setMeals(savedMeals);
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        findViewById(R.id.h_AddFood_btn).setOnClickListener(this);
+        findViewById(R.id.h_Entries_btn).setOnClickListener(this);
+        findViewById(R.id.h_Goals_btn).setOnClickListener(this);
+        findViewById(R.id.h_Friends_btn).setOnClickListener(this);
+        findViewById(R.id.h_MealHistory_btn).setOnClickListener(this);
+
+        int id = v.getId();
+
+        switch(id)
+        {
+            case R.id.h_AddFood_btn:
+            {
+                Intent addIntent = new Intent(HomeActivity.this, AddActivity.class);
+                startActivity(addIntent);
+                break;
+            }
+
+            case R.id.h_Entries_btn:
+            {
+                break;
+            }
+
+            case R.id.h_Goals_btn:
+            {
+                break;
+            }
+
+            case R.id.h_Friends_btn:
+            {
+                break;
+            }
+
+            case R.id.h_MealHistory_btn:
+            {
+                break;
+            }
+        }
     }
 }

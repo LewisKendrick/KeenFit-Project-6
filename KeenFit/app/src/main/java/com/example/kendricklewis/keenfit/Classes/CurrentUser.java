@@ -240,6 +240,62 @@ public class CurrentUser
             this.sodium = sodium;
             this.sugars = sugars;
         }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getBrandname() {
+            return brandname;
+        }
+
+        public String getDateAdded() {
+            return dateAdded;
+        }
+
+        public int getServings() {
+            return servings;
+        }
+
+        public double getCalories() {
+            return calories;
+        }
+
+        public double getCarbs() {
+            return carbs;
+        }
+
+        public double getCholesterol() {
+            return cholesterol;
+        }
+
+        public double getDietary() {
+            return dietary;
+        }
+
+        public double getFat() {
+            return fat;
+        }
+
+        public double getProtein() {
+            return protein;
+        }
+
+        public double getSaturatedfat() {
+            return saturatedfat;
+        }
+
+        public double getSodium() {
+            return sodium;
+        }
+
+        public double getSugars() {
+            return sugars;
+        }
     }
 
 }

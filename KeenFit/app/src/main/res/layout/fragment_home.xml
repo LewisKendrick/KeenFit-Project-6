@@ -80,216 +80,177 @@
 
     </FrameLayout>
 
-    <Button
-        android:id="@+id/h_addFood_Btn"
-        android:layout_width="120dp"
-        android:layout_height="140dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="8dp"
-        android:background="#00000000"
-        app:layout_constraintBottom_toTopOf="@+id/entries_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.333" />
-
-    <ImageView
-        android:id="@+id/addfood_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/colorLightGrey"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/h_addFood_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_addFood_Btn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/h_addFood_Btn"
-        app:layout_constraintTop_toTopOf="@+id/h_addFood_Btn"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_addfood" />
-
-    <TextView
-        android:id="@+id/addFood_lbl"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:background="@color/colorLightGrey"
-        android:text="Add Food"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/h_addFood_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_addFood_Btn"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toStartOf="@+id/h_addFood_Btn"
-        app:layout_constraintTop_toBottomOf="@+id/addfood_image" />
-
-    <Button
-        android:id="@+id/h_entries_Btn"
-        android:layout_width="120dp"
-        android:layout_height="140dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="16dp"
-        android:background="#00dfdfdf"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/entries_image"
-        android:layout_width="117dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/colorLightGrey"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/h_entries_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_entries_Btn"
-        app:layout_constraintStart_toStartOf="@+id/h_entries_Btn"
-        app:layout_constraintTop_toTopOf="@+id/h_entries_Btn"
-        app:srcCompat="@drawable/icon_entrys" />
-
     <TextView
         android:id="@+id/entires_lbl"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginStart="2dp"
         android:background="@color/colorLightGrey"
         android:text="Entries"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/h_entries_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_entries_Btn"
-        app:layout_constraintStart_toStartOf="@+id/h_entries_Btn"
-        app:layout_constraintTop_toBottomOf="@+id/entries_image" />
-
-    <Button
-        android:id="@+id/h_Goals_Btn"
-        android:layout_width="120dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:background="#00dfdfdf"
-        app:layout_constraintBottom_toBottomOf="@+id/entires_lbl"
-        app:layout_constraintStart_toEndOf="@+id/h_entries_Btn"
-        app:layout_constraintTop_toTopOf="@+id/entries_image"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/goals_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/colorLightGrey"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/h_Goals_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_Goals_Btn"
-        app:layout_constraintStart_toStartOf="@+id/h_Goals_Btn"
-        app:layout_constraintTop_toTopOf="@+id/h_Goals_Btn"
-        app:srcCompat="@drawable/icon_goals" />
-
-    <TextView
-        android:id="@+id/goals_lbl"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorLightGrey"
-        android:text="Goals"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/h_Goals_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_Goals_Btn"
-        app:layout_constraintStart_toStartOf="@+id/h_Goals_Btn"
-        app:layout_constraintTop_toBottomOf="@+id/goals_image" />
-
-    <Button
-        android:id="@+id/h_Friends_Btn"
-        android:layout_width="120dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="19dp"
-        android:background="#00dfdfdf"
-        app:layout_constraintBottom_toBottomOf="@+id/entires_lbl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/h_Goals_Btn"
-        app:layout_constraintTop_toTopOf="@+id/entries_image" />
-
-    <ImageView
-        android:id="@+id/friends_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/colorLightGrey"
-        app:layout_constraintBottom_toBottomOf="@+id/h_Friends_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_Friends_Btn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/h_Friends_Btn"
-        app:layout_constraintTop_toTopOf="@+id/h_Friends_Btn"
-        app:srcCompat="@drawable/icon_friends" />
-
-    <TextView
-        android:id="@+id/friends_lbl"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorLightGrey"
-        android:text="Friends"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/h_Friends_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_Friends_Btn"
-        app:layout_constraintStart_toStartOf="@+id/h_Friends_Btn"
-        app:layout_constraintTop_toBottomOf="@+id/friends_image" />
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="650dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="351dp" />
+        app:layout_constraintGuide_begin="329dp" />
 
-    <Button
-        android:id="@+id/h_MealHistory_Btn"
+    <ImageButton
+        android:id="@+id/h_AddFood_btn"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:srcCompat="@drawable/icon_addfood" />
+
+    <TextView
+        android:id="@+id/addFood_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:text="Add Food"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        app:barrierAllowsGoneWidgets="false"
+        app:layout_constraintBottom_toTopOf="@+id/h_AddFood_btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_AddFood_btn"
+        app:layout_constraintStart_toStartOf="@+id/h_AddFood_btn" />
+
+    <ImageButton
+        android:id="@+id/h_MealHistory_btn"
         android:layout_width="120dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="72dp"
-        android:background="#00aaaaaa"
-        app:layout_constraintBottom_toBottomOf="@+id/addFood_lbl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addfood_image"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/mealhistory_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/colorLightGrey"
-        app:layout_constraintBottom_toBottomOf="@+id/h_MealHistory_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_MealHistory_Btn"
-        app:layout_constraintStart_toStartOf="@+id/h_MealHistory_Btn"
-        app:layout_constraintTop_toTopOf="@+id/h_MealHistory_Btn"
+        android:layout_marginStart="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/h_AddFood_btn"
+        app:layout_constraintStart_toEndOf="@+id/h_AddFood_btn"
+        app:layout_constraintTop_toBottomOf="@+id/addFood_lbl"
         app:srcCompat="@drawable/icon_mealhistory" />
 
     <TextView
-        android:id="@+id/mealhistory_lbl"
+        android:id="@+id/mealHistory_lbl"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorLightGrey"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
         android:text="Meal History"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/h_MealHistory_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/h_MealHistory_Btn"
-        app:layout_constraintStart_toStartOf="@+id/h_MealHistory_Btn"
-        app:layout_constraintTop_toBottomOf="@+id/mealhistory_image" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/h_MealHistory_btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_MealHistory_btn"
+        app:layout_constraintStart_toStartOf="@+id/h_MealHistory_btn"
+        app:layout_constraintTop_toTopOf="@+id/addFood_lbl" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+    <TextView
+        android:id="@+id/goals_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
         android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/h_Summary_frame"
-        app:layout_constraintTop_toBottomOf="@+id/h_Summary_frame" />
+        android:text="Goals"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/h_AddFood_btn"
+        app:layout_constraintStart_toStartOf="@+id/h_AddFood_btn"
+        app:layout_constraintTop_toBottomOf="@+id/h_AddFood_btn" />
+
+    <ImageButton
+        android:id="@+id/h_Goals_btn"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/h_AddFood_btn"
+        app:layout_constraintStart_toStartOf="@+id/h_AddFood_btn"
+        app:layout_constraintTop_toBottomOf="@+id/goals_lbl"
+        app:srcCompat="@drawable/icon_goals" />
+
+    <TextView
+        android:id="@+id/entries_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Entries"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/h_Goals_btn"
+        app:layout_constraintEnd_toEndOf="@+id/mealHistory_lbl"
+        app:layout_constraintStart_toStartOf="@+id/mealHistory_lbl"
+        app:layout_constraintTop_toTopOf="@+id/goals_lbl"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/h_Entries_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/h_Goals_btn"
+        app:layout_constraintEnd_toEndOf="@+id/h_MealHistory_btn"
+        app:layout_constraintStart_toStartOf="@+id/h_MealHistory_btn"
+        app:layout_constraintTop_toTopOf="@+id/h_Goals_btn"
+        app:srcCompat="@drawable/icon_entrys" />
+
+    <TextView
+        android:id="@+id/friends_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Friends"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mealHistory_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/h_Friends_btn"
+        app:layout_constraintStart_toStartOf="@+id/h_Friends_btn"
+        app:layout_constraintTop_toTopOf="@+id/mealHistory_lbl"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/h_Friends_btn"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/h_MealHistory_btn"
+        app:layout_constraintStart_toEndOf="@+id/h_MealHistory_btn"
+        app:layout_constraintTop_toBottomOf="@+id/mealHistory_lbl"
+        app:srcCompat="@drawable/icon_friends" />
+
+    <TextView
+        android:id="@+id/totalEntries_lbl"
+        android:layout_width="0dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorLightGrey"
+        android:text="TOTAL ENTRIES"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/friends_lbl"
+        app:layout_constraintStart_toStartOf="@+id/friends_lbl"
+        app:layout_constraintTop_toTopOf="@+id/h_Entries_btn" />
+
+    <TextView
+        android:id="@+id/h_TotalEntries_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorLightGrey"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/h_Entries_btn"
+        app:layout_constraintEnd_toEndOf="@+id/totalEntries_lbl"
+        app:layout_constraintStart_toStartOf="@+id/totalEntries_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/totalEntries_lbl" />
 
 </android.support.constraint.ConstraintLayout>

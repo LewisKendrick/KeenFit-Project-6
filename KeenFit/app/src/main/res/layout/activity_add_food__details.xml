@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/details_bg"
+    tools:context=".Activities.AddFood_DetailsActivity">
+
+    <TextView
+        android:id="@+id/d_foodName_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Apples"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/d_brandName_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d_foodName_txt" />
+
+    <FrameLayout
+        android:id="@+id/detail_frame"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#a7dfdfdf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d_brandName_txt">
+
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/d_addFood_btn"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_add_circle_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d_sugars_txt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/d_addServings_Btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/transparentBlack"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_add_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/d_addFood_btn"
+        app:layout_constraintStart_toEndOf="@+id/d_subtractServings_btn"
+        app:layout_constraintTop_toBottomOf="@+id/detail_frame" />
+
+    <ImageButton
+        android:id="@+id/d_subtractServings_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/transparentBlack"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_subtract_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/d_addServings_Btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/d_addServings_Btn" />
+
+    <TextView
+        android:id="@+id/sugars_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:text="Sugars"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/totalFat_lbl"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/totalFat_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/sodium_lbl" />
+
+    <TextView
+        android:id="@+id/sodium_lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Sodium"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/totalFat_lbl"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/totalFat_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/saturated_lbl" />
+
+    <TextView
+        android:id="@+id/saturated_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:text="Saturated Fat"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/totalFat_lbl"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/totalFat_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/protein_lbl" />
+
+    <TextView
+        android:id="@+id/protein_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:text="Protein"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/totalFat_lbl"
+        app:layout_constraintStart_toStartOf="@+id/totalFat_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/totalFat_lbl" />
+
+    <TextView
+        android:id="@+id/dietary_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:text="Dietary"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/cholesterol_lbl"
+        app:layout_constraintStart_toStartOf="@+id/cholesterol_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/cholesterol_lbl" />
+
+    <TextView
+        android:id="@+id/carbs_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:text="Carbohydrates"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/calories_lbl"
+        app:layout_constraintStart_toStartOf="@+id/calories_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/calories_lbl" />
+
+    <TextView
+        android:id="@+id/cholesterol_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:text="Cholesterol"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/carbs_lbl"
+        app:layout_constraintStart_toStartOf="@+id/carbs_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/carbs_lbl" />
+
+    <TextView
+        android:id="@+id/totalFat_lbl"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:text="Total Fat:"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/dietary_lbl"
+        app:layout_constraintStart_toStartOf="@+id/dietary_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/dietary_lbl" />
+
+    <TextView
+        android:id="@+id/calories_lbl"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Calories"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/detail_frame"
+        app:layout_constraintTop_toTopOf="@+id/detail_frame" />
+
+    <TextView
+        android:id="@+id/d_Calories_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/calories_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/detail_frame"
+        app:layout_constraintStart_toEndOf="@+id/calories_lbl"
+        app:layout_constraintTop_toTopOf="@+id/calories_lbl" />
+
+    <TextView
+        android:id="@+id/d_sugars_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sugars_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/d_Calories_txt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
+        app:layout_constraintTop_toTopOf="@+id/sugars_lbl"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/d_sodium_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sodium_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/d_Calories_txt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
+        app:layout_constraintTop_toTopOf="@+id/sodium_lbl"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/d_saturatedFat_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/saturated_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/d_Calories_txt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
+        app:layout_constraintTop_toTopOf="@+id/saturated_lbl"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/d_protein_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/protein_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/d_Calories_txt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
+        app:layout_constraintTop_toTopOf="@+id/protein_lbl" />
+
+    <TextView
+        android:id="@+id/d_totalFat_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/totalFat_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/d_Calories_txt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
+        app:layout_constraintTop_toTopOf="@+id/totalFat_lbl"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/d_dietary_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dietary_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/d_Calories_txt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
+        app:layout_constraintTop_toTopOf="@+id/dietary_lbl"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/d_cholest_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cholesterol_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/d_Calories_txt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
+        app:layout_constraintTop_toTopOf="@+id/cholesterol_lbl" />
+
+    <TextView
+        android:id="@+id/d_Carb_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorLightGrey"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/carbs_lbl"
+        app:layout_constraintEnd_toEndOf="@+id/d_Calories_txt"
+        app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
+        app:layout_constraintTop_toTopOf="@+id/carbs_lbl" />
+
+</android.support.constraint.ConstraintLayout>
