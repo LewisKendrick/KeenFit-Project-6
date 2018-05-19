@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_addfood"
             android:icon="@drawable/icon_addfood"
-            android:title="Add Food"/>
+            android:title="Add Food" />
         <item
             android:id="@+id/nav_entries"
             android:icon="@drawable/icon_entrys"

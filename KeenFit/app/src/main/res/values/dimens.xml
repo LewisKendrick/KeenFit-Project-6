@@ -1,3 +1,7 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="fab_margin">16dp</dimen>
+
+    <!--This will cause my navigation drawer images to be bigger-->
+    <!--<dimen name="design_navigation_icon_size" tools:override="true">28dp</dimen>-->
+
 </resources>

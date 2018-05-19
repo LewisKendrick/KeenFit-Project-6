@@ -1,7 +1,10 @@
 package com.example.kendricklewis.keenfit;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -11,8 +14,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,9 +46,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private TextView greeting;
     private TextView totalEntries;
     private Boolean shouldUpdate;
+    private ImageButton menuBtn;
+    ImageView nav_image;
+    TextView nav_name;
+    TextView nav_email;
+
 
     //grabing all my user info
     public static CurrentUser currentUser = new CurrentUser();
+
+    public static ArrayList<Bitmap> profilePic_Array = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -50,6 +64,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         setActionBar(null);
+
+        setImageArray();
 
         Toasty.Config.getInstance().setSuccessColor(Color.GREEN).apply();
         shouldUpdate = true;
@@ -74,10 +90,27 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         findViewById(R.id.h_Friends_btn).setOnClickListener(this);
         findViewById(R.id.h_MealHistory_btn).setOnClickListener(this);
 
+        /*
+        *
+        * Navigational Drawer setup
+        */
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
-        findViewById(R.id.menuBtn).setOnClickListener(new View.OnClickListener()
+
+        View hView =  navigationView.getHeaderView(0);
+        nav_image = (ImageView)hView.findViewById(R.id.header_image);
+        nav_name = (TextView)hView.findViewById(R.id.header_name);
+        nav_email = (TextView)hView.findViewById(R.id.header_email);
+//   TODO:     nav_image.setImageBitmap(profilePic_Array.get(2));
+//   TODO:     nav_name.setText(currentUser.getName());
+//   TODO:     nav_email.setText(mCurrentUser.getEmail());
+
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
+
+        menuBtn = (ImageButton) findViewById(R.id.menuBtn);
+
+        menuBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -86,9 +119,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 {
                     drawer.closeDrawer(GravityCompat.START);
                 }
-                else {
-                    drawer.openDrawer(GravityCompat.START);
-                }
+                else
+                    {
+                        drawer.openDrawer(GravityCompat.START);
+                    }
             }
         });
 
@@ -196,6 +230,30 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    public void setImageArray()
+    {
+        Bitmap image1 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_1);
+        Bitmap image2 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_2);
+        Bitmap image3 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_3);
+        Bitmap image4 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_4);
+        Bitmap image5 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_5);
+        Bitmap image6 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_6);
+        Bitmap image7 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_7);
+        Bitmap image8 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_8);
+        Bitmap image9 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_9);
+        Bitmap image10 = BitmapFactory.decodeResource(getResources(),R.drawable.icon_10);
+        profilePic_Array.add(image1);
+        profilePic_Array.add(image2);
+        profilePic_Array.add(image3);
+        profilePic_Array.add(image4);
+        profilePic_Array.add(image5);
+        profilePic_Array.add(image6);
+        profilePic_Array.add(image7);
+        profilePic_Array.add(image8);
+        profilePic_Array.add(image9);
+        profilePic_Array.add(image10);
+    }
+
     public class GetUserTask extends AsyncTask<DataSnapshot, Void, Boolean>
     {
         @Override
@@ -277,7 +335,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             if(aBoolean && shouldUpdate)
             {
+                //setting topbar info
                 greeting.setText(String.format("Welcome, %s", currentUser.getName()));
+                menuBtn.setImageBitmap(profilePic_Array.get(currentUser.getId_picture()));
+                nav_image.setImageBitmap(profilePic_Array.get(2));
+                nav_name.setText(currentUser.getName());
+                nav_email.setText(mCurrentUser.getEmail());
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.h_Summary_frame,
                         Summary_Fragment.newInstance()).commit();
             }
