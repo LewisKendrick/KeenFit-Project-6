@@ -41,13 +41,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private TextView totalEntries;
     private Boolean shouldUpdate;
 
-    /* MY FIREBASE DATABASE*/
-    private FirebaseDatabase database;
-    /* USER REFERENCE */
-    private DatabaseReference userRef;
-
-
-
     //grabing all my user info
     public static CurrentUser currentUser = new CurrentUser();
 
@@ -61,8 +54,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Toasty.Config.getInstance().setSuccessColor(Color.GREEN).apply();
         shouldUpdate = true;
         userID = mCurrentUser.getUid();
-        database = FirebaseDatabase.getInstance();
-        userRef = database.getReference().child("Users").child(userID);
+        /* MY FIREBASE DATABASE*/
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /* USER REFERENCE */
+        DatabaseReference userRef = database.getReference().child("Users").child(userID);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, null, R.string.open_drawer, R.string.close_drawer);
