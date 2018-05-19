@@ -1,4 +1,4 @@
-package com.example.kendricklewis.keenfit.Activities;
+package com.example.kendricklewis.keenfit.Activities.AddFood;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -19,6 +19,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 //import com.example.kendricklewis.keenfit.Downloader.FindNutritionTask;
@@ -44,6 +45,8 @@ import es.dmoral.toasty.Toasty;
 public class AddActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MaterialSearchBar.OnSearchActionListener
 {
     MaterialSearchBar searchBar;
+    ProgressBar loadingImage;
+
     private DrawerLayout drawer;
     public static ArrayList<CurrentUser.Meal> allMeals = new ArrayList<>();
 
@@ -53,6 +56,8 @@ public class AddActivity extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_add);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        loadingImage = (ProgressBar) findViewById(R.id.progressBar);
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         searchBar = (MaterialSearchBar) findViewById(R.id.searchBar);
@@ -61,23 +66,24 @@ public class AddActivity extends AppCompatActivity implements NavigationView.OnN
         searchBar.setText("");
         Log.d("LOG_TAG", getClass().getSimpleName() + ": text " + searchBar.getText());
         searchBar.setCardViewElevation(10);
-        searchBar.addTextChangeListener(new TextWatcher() {
+        searchBar.addTextChangeListener(new TextWatcher()
+        {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            { }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Log.d("LOG_TAG", getClass().getSimpleName() + " text changed " + searchBar.getText());
-            }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            { }
 
             @Override
             public void afterTextChanged(Editable editable)
-            {
-
-            }
+            { }
 
         });
+
+        FindNutritionTask downloadNutritionList = new FindNutritionTask();
+        downloadNutritionList.execute("apples");
     }
 
     @Override
@@ -150,7 +156,6 @@ public class AddActivity extends AppCompatActivity implements NavigationView.OnN
             //downloading all data
             FindNutritionTask downloadNutritionList = new FindNutritionTask();
             downloadNutritionList.execute(text.toString());
-            Toasty.info(getApplicationContext(), "Search confirmed").show();
         }
 
         searchBar.disableSearch();
@@ -202,6 +207,12 @@ public class AddActivity extends AppCompatActivity implements NavigationView.OnN
 
     public class FindNutritionTask extends AsyncTask<String, Void, ArrayList<CurrentUser.Meal>>
     {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loadingImage.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected ArrayList<CurrentUser.Meal> doInBackground(String... strings)
         {
@@ -349,6 +360,7 @@ public class AddActivity extends AppCompatActivity implements NavigationView.OnN
             if(!allMeals.isEmpty())
             {
                entryDataGathered(true);
+               loadingImage.setVisibility(View.INVISIBLE);
             }
             super.onPostExecute(allMeals);
         }

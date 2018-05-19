@@ -9,13 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.kendricklewis.keenfit.Activities.AddFood_DetailsActivity;
+import com.example.kendricklewis.keenfit.Activities.AddFood.AddFood_DetailsActivity;
 import com.example.kendricklewis.keenfit.Adapters.AddFood_Adapter;
-import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 import com.example.kendricklewis.keenfit.R;
-
-import static com.example.kendricklewis.keenfit.Activities.AddActivity.allMeals;
-import static com.example.kendricklewis.keenfit.HomeActivity.currentUser;
+import static com.example.kendricklewis.keenfit.Activities.AddFood.AddActivity.allMeals;
 
 public class AddList_Fragment extends ListFragment
 {

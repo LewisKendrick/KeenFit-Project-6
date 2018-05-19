@@ -227,13 +227,13 @@
     <TextView
         android:id="@+id/totalEntries_lbl"
         android:layout_width="0dp"
-        android:layout_height="79dp"
+        android:layout_height="60dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorLightGrey"
         android:text="TOTAL ENTRIES"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="30dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/friends_lbl"
         app:layout_constraintStart_toStartOf="@+id/friends_lbl"
         app:layout_constraintTop_toTopOf="@+id/h_Entries_btn" />

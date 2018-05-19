@@ -41,7 +41,6 @@ public class Summary_Fragment extends Fragment
         TextView mealsToday = (TextView) summaryView.findViewById(R.id.s_MealsToday_Txt);
         TextView dailyAverage = (TextView) summaryView.findViewById(R.id.s_DailyAverage_Txt);
 
-
         try
         {
             currentCals.setText(String.format("%s", currentUser.getCurrent_Calories()));

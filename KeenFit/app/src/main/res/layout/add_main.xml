@@ -5,10 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".Activities.AddActivity">
-
-
-    <!--//<include layout="@layout/content_add" />-->
+    tools:context=".Activities.AddFood.AddActivity">
 
     <RelativeLayout
         android:background="@color/colorPrimary"
@@ -26,7 +23,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
     </FrameLayout>
 
     <com.mancj.materialsearchbar.MaterialSearchBar
@@ -38,5 +34,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </android.support.design.widget.CoordinatorLayout>

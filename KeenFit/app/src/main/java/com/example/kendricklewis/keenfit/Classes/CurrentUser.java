@@ -1,8 +1,17 @@
 package com.example.kendricklewis.keenfit.Classes;
 
+import android.content.Context;
+import android.widget.Toast;
+
+import com.example.kendricklewis.keenfit.Fragments.Summary_Fragment;
+import com.example.kendricklewis.keenfit.R;
+import com.google.firebase.database.DataSnapshot;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+
+import es.dmoral.toasty.Toasty;
 
 public class CurrentUser
 {
@@ -102,8 +111,6 @@ public class CurrentUser
     public void setMeals(ArrayList<Meal> meals) {
         this.meals = meals;
     }
-
-
 
     /*
     TODO: THIS IS MY GOALS CLASS
@@ -295,6 +302,10 @@ public class CurrentUser
 
         public double getSugars() {
             return sugars;
+        }
+
+        public void setServings(int servings) {
+            this.servings = servings;
         }
     }
 

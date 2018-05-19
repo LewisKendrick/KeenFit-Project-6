@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.kendricklewis.keenfit.HomeActivity;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity
 {
     EditText username_editText;
     EditText password_editText;
+    ProgressBar loadingBar;
 
     //checking the current auth state
     private FirebaseAuth mAuth;
@@ -34,6 +36,8 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        loadingBar = (ProgressBar) findViewById(R.id.loadingBar);
+
         //creating instance for firebase
         mAuth = FirebaseAuth.getInstance();
 
@@ -44,9 +48,16 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                loadingBar.setVisibility(View.VISIBLE);
                 signInUser();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadingBar.setVisibility(View.GONE);
     }
 
     private void signInUser()
@@ -62,7 +73,6 @@ public class LoginActivity extends AppCompatActivity
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Toasty.success(getApplicationContext(), "User was signed in", Toast.LENGTH_SHORT).show();
                             mCurrentUser = mAuth.getCurrentUser();
 
 
@@ -83,6 +93,7 @@ public class LoginActivity extends AppCompatActivity
                             password_editText.setText("");
                             username_editText.setText("");
 
+                            loadingBar.setVisibility(View.GONE);
 
                         }
                     }
