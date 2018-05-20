@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -14,7 +13,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -23,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kendricklewis.keenfit.Activities.AddFood.AddActivity;
+import com.example.kendricklewis.keenfit.Activities.MealHistory.MealHistoryActivity;
 import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 import com.example.kendricklewis.keenfit.Fragments.Summary_Fragment;
 import com.google.firebase.database.DataSnapshot;
@@ -45,7 +44,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public static String userID;
     private TextView greeting;
     private TextView totalEntries;
-    private Boolean shouldUpdate;
+    private Boolean shouldUpdate = true;
     private ImageButton menuBtn;
     ImageView nav_image;
     TextView nav_name;
@@ -175,7 +174,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         shouldUpdate = true;
         if(currentUser.getMeals() != null)
         {
-            totalEntries.setText(currentUser.getMeals().size() + "");
+            totalEntries.setText(String.format("%d", currentUser.getMeals().size()));
             getSupportFragmentManager().beginTransaction().replace(R.id.h_Summary_frame,
                     Summary_Fragment.newInstance()).commit();
         }
@@ -210,6 +209,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.h_Entries_btn:
             {
+
                 break;
             }
 
@@ -225,6 +225,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.h_MealHistory_btn:
             {
+                Intent mealHistoryIntent = new Intent(HomeActivity.this, MealHistoryActivity.class);
+                startActivity(mealHistoryIntent);
                 break;
             }
         }

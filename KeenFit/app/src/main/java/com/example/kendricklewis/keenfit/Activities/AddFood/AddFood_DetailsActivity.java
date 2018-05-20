@@ -1,6 +1,8 @@
 package com.example.kendricklewis.keenfit.Activities.AddFood;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -14,7 +16,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import static com.example.kendricklewis.keenfit.Activities.AddFood.AddActivity.*;
-import static com.example.kendricklewis.keenfit.Fragments.AddList_Fragment.selectedItem;
+import static com.example.kendricklewis.keenfit.Activities.MealHistory.MealHistory_ListFragment.finalValues;
+import static com.example.kendricklewis.keenfit.Activities.MealHistory.MealHistory_ListFragment.selected;
+import static com.example.kendricklewis.keenfit.Fragments.FoodList_Fragment.selectedItem;
+import static com.example.kendricklewis.keenfit.HomeActivity.currentUser;
 import static com.example.kendricklewis.keenfit.HomeActivity.userID;
 
 public class AddFood_DetailsActivity extends Activity
@@ -49,9 +54,11 @@ public class AddFood_DetailsActivity extends Activity
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.85), (int)(height*.9));
+        getWindow().setLayout((int)(width*.8), (int)(height*.9));
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
+
         params.gravity = Gravity.CENTER;
         params.x = 0;
         params.y = -20;
@@ -119,7 +126,14 @@ public class AddFood_DetailsActivity extends Activity
 
     private void changeInfo()
     {
-        selectedMeal = allMeals.get(selectedItem);
+        if(!allMeals.isEmpty())
+        {
+            selectedMeal = allMeals.get(selectedItem);
+        }
+        else if (!finalValues.isEmpty())
+        {
+            selectedMeal = finalValues.get(selected);
+        }
 
         foodNameTextView.setText(selectedMeal.getName());
         brandNameTextView.setText(selectedMeal.getBrandname());

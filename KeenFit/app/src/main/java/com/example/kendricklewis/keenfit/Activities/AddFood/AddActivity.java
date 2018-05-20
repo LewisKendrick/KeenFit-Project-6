@@ -5,26 +5,21 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 //import com.example.kendricklewis.keenfit.Downloader.FindNutritionTask;
-import com.example.kendricklewis.keenfit.Fragments.AddList_Fragment;
-import com.example.kendricklewis.keenfit.Fragments.Summary_Fragment;
+import com.example.kendricklewis.keenfit.Fragments.FoodList_Fragment;
 import com.example.kendricklewis.keenfit.R;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 
@@ -63,8 +58,8 @@ public class AddActivity extends AppCompatActivity implements NavigationView.OnN
         searchBar = (MaterialSearchBar) findViewById(R.id.searchBar);
         searchBar.setOnSearchActionListener(this);
         //searchBar.inflateMenu(R.menu.activity_main_drawer);
-        searchBar.setText("");
-        Log.d("LOG_TAG", getClass().getSimpleName() + ": text " + searchBar.getText());
+        searchBar.setText("apples");
+
         searchBar.setCardViewElevation(10);
         searchBar.addTextChangeListener(new TextWatcher()
         {
@@ -157,8 +152,9 @@ public class AddActivity extends AppCompatActivity implements NavigationView.OnN
             FindNutritionTask downloadNutritionList = new FindNutritionTask();
             downloadNutritionList.execute(text.toString());
         }
-
+        searchBar.setPlaceHolder(text.toString());
         searchBar.disableSearch();
+
     }
 
     @Override
@@ -181,7 +177,7 @@ public class AddActivity extends AppCompatActivity implements NavigationView.OnN
         if(isDone)
         {
             getSupportFragmentManager().beginTransaction().replace(R.id.a_FoodList_frame,
-                    AddList_Fragment.newInstance()).commit();
+                    FoodList_Fragment.newInstance()).commit();
         }
     }
 

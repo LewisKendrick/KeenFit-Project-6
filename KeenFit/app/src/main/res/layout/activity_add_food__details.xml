@@ -49,43 +49,6 @@
 
     </FrameLayout>
 
-    <ImageButton
-        android:id="@+id/d_addFood_btn"
-        android:layout_width="160dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_add_circle_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/d_sugars_txt"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageButton
-        android:id="@+id/d_addServings_Btn"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/transparentBlack"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_add_24dp"
-        app:layout_constraintEnd_toStartOf="@+id/d_addFood_btn"
-        app:layout_constraintStart_toEndOf="@+id/d_subtractServings_btn"
-        app:layout_constraintTop_toBottomOf="@+id/d_servings_txt" />
-
-    <ImageButton
-        android:id="@+id/d_subtractServings_btn"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@color/transparentBlack"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_subtract_24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/d_addServings_Btn"
-        app:layout_constraintEnd_toStartOf="@+id/d_addServings_Btn"
-        app:layout_constraintStart_toStartOf="@+id/detail_frame"
-        app:layout_constraintTop_toTopOf="@+id/d_addServings_Btn" />
-
     <TextView
         android:id="@+id/sugars_lbl"
         android:layout_width="0dp"
@@ -337,18 +300,6 @@
         app:layout_constraintStart_toStartOf="@+id/d_Calories_txt"
         app:layout_constraintTop_toTopOf="@+id/carbs_lbl" />
 
-    <TextView
-        android:id="@+id/servings_lbl"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Servings:"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/d_servings_txt"
-        app:layout_constraintEnd_toEndOf="@+id/d_subtractServings_btn"
-        app:layout_constraintStart_toStartOf="@+id/detail_frame"
-        app:layout_constraintTop_toTopOf="@+id/d_servings_txt" />
 
     <TextView
         android:id="@+id/d_servings_txt"
@@ -363,5 +314,56 @@
         app:layout_constraintEnd_toEndOf="@+id/d_addServings_Btn"
         app:layout_constraintStart_toEndOf="@+id/d_subtractServings_btn"
         app:layout_constraintTop_toBottomOf="@+id/detail_frame" />
+
+    <TextView
+        android:id="@+id/servings_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Servings:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/d_servings_txt"
+        app:layout_constraintEnd_toEndOf="@+id/d_subtractServings_btn"
+        app:layout_constraintStart_toStartOf="@+id/detail_frame"
+        app:layout_constraintTop_toTopOf="@+id/d_servings_txt" />
+
+    <ImageButton
+        android:id="@+id/d_subtractServings_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@color/transparentBlack"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_subtract_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/d_addServings_Btn"
+        app:layout_constraintEnd_toStartOf="@+id/d_addServings_Btn"
+        app:layout_constraintStart_toStartOf="@+id/detail_frame"
+        app:layout_constraintTop_toTopOf="@+id/d_addServings_Btn" />
+
+    <ImageButton
+        android:id="@+id/d_addServings_Btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/transparentBlack"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_add_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/d_addFood_btn"
+        app:layout_constraintStart_toEndOf="@+id/d_subtractServings_btn"
+        app:layout_constraintTop_toBottomOf="@+id/d_servings_txt" />
+
+
+    <ImageButton
+        android:id="@+id/d_addFood_btn"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_add_circle_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d_sugars_txt"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

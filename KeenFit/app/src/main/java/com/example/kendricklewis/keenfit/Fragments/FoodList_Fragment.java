@@ -14,16 +14,16 @@ import com.example.kendricklewis.keenfit.Adapters.AddFood_Adapter;
 import com.example.kendricklewis.keenfit.R;
 import static com.example.kendricklewis.keenfit.Activities.AddFood.AddActivity.allMeals;
 
-public class AddList_Fragment extends ListFragment
+public class FoodList_Fragment extends ListFragment
 {
     public static int selectedItem = 0;
 
-    public static AddList_Fragment newInstance()
+    public static FoodList_Fragment newInstance()
     {
 
         Bundle args = new Bundle();
 
-        AddList_Fragment fragment = new AddList_Fragment();
+        FoodList_Fragment fragment = new FoodList_Fragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -31,7 +31,7 @@ public class AddList_Fragment extends ListFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.fragment_add, container, false);
+        return inflater.inflate(R.layout.fragment_list, container, false);
     }
 
     @Override

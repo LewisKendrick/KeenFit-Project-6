@@ -24,8 +24,11 @@
             android:name=".Activities.AddFood.AddActivity"
             android:label="@string/title_activity_add"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activities.AddFood.AddFood_DetailsActivity" android:theme="@style/AppTheme.DetailTheme">
-        </activity>
+        <activity
+            android:name=".Activities.AddFood.AddFood_DetailsActivity"
+            android:theme="@style/AppTheme.DetailTheme"></activity>
+        <activity android:name=".Activities.MealHistory.MealHistoryActivity" />
+        <activity android:name=".Activities.Goals.GoalsActivity"></activity>
     </application>
 
 </manifest>
