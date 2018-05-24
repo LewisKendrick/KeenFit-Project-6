@@ -20,9 +20,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kendricklewis.keenfit.Activities.AboutUsActivity;
 import com.example.kendricklewis.keenfit.Activities.AddFood.AddActivity;
 import com.example.kendricklewis.keenfit.Activities.Entries.EntriesActivity;
+import com.example.kendricklewis.keenfit.Activities.Friends.FriendsActivity;
 import com.example.kendricklewis.keenfit.Activities.Goals.GoalsActivity;
+import com.example.kendricklewis.keenfit.Activities.Login.LoginActivity;
 import com.example.kendricklewis.keenfit.Activities.MealHistory.MealHistoryActivity;
 import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 import com.example.kendricklewis.keenfit.Fragments.Summary_Fragment;
@@ -166,8 +169,60 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+    public boolean onNavigationItemSelected(@NonNull MenuItem item)
+    {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        switch(id)
+        {
+            case R.id.nav_addfood:
+            {
+                Intent nextIntent = new Intent(this, AddActivity.class);
+                startActivity(nextIntent);
+                break;
+            }
+            case  R.id.nav_mealhistory:
+            {
+                Intent nextIntent = new Intent(this, MealHistoryActivity.class);
+                startActivity(nextIntent);
+                break;
+            }
+            case R.id.nav_goals:
+            {
+                Intent nextIntent = new Intent(this, GoalsActivity.class);
+                startActivity(nextIntent);
+                break;
+            }
+            case R.id.nav_friends:
+            {
+                Intent nextIntent = new Intent(this, FriendsActivity.class);
+                startActivity(nextIntent);
+                break;
+            }
+            case R.id.nav_entries:
+            {
+                Intent nextIntent = new Intent(this, EntriesActivity.class);
+                startActivity(nextIntent);
+                break;
+            }
+
+            case R.id.nav_aboutus:
+            {
+                Intent nextIntent = new Intent(this, AboutUsActivity.class);
+                startActivity(nextIntent);
+                break;
+            }
+            case R.id.nav_signout:
+            {
+                LoginActivity.mAuth.signOut();
+                break;
+            }
+
+
+        }
+
+        return true;
     }
 
     @Override
@@ -226,6 +281,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.h_Friends_btn:
             {
+                Intent nextIntent = new Intent(this, FriendsActivity.class);
+                startActivity(nextIntent);
                 break;
             }
 

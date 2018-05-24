@@ -15,9 +15,29 @@
 
     <style name="AddFoodTheme" parent="AppTheme">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">    @color/addPrimary</item>
+        <item name="colorPrimaryDark">@color/addPrimaryDark</item>
+        <item name="colorAccent">     @color/addAccent</item>
     </style>
 
+    <style name="EntriesTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/entryPrimary</item>
+        <item name="colorPrimaryDark">@color/entryPrimaryDark</item>
+        <item name="colorAccent">@color/entryAccent</item>
+    </style>
+
+    <style name="HistoryTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/mealHistoryPrimary</item>
+        <item name="colorPrimaryDark">@color/mealHistoryPrimaryDark</item>
+        <item name="colorAccent">@color/mealHistoryAccent</item>
+    </style>
+
+    <style name="FriendsTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/friendsPrimary</item>
+        <item name="colorPrimaryDark">@color/friendsPrimaryDark</item>
+        <item name="colorAccent">@color/friendsAccent</item>
+    </style>
 </resources>

@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity
     ProgressBar loadingBar;
 
     //checking the current auth state
-    private FirebaseAuth mAuth;
+    public static FirebaseAuth mAuth;
     public static FirebaseUser mCurrentUser;
 
     @Override

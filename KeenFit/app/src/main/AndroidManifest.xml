@@ -23,15 +23,21 @@
         <activity
             android:name=".Activities.AddFood.AddActivity"
             android:label="@string/title_activity_add"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AddFoodTheme" />
         <activity
             android:name=".Activities.AddFood.AddFood_DetailsActivity"
             android:theme="@style/AppTheme.DetailTheme" />
-        <activity android:name=".Activities.MealHistory.MealHistoryActivity" />
+        <activity
+            android:name=".Activities.MealHistory.MealHistoryActivity"
+            android:theme="@style/HistoryTheme" />
         <activity android:name=".Activities.Goals.GoalsActivity" />
-        <activity android:name=".Activities.Entries.EntriesActivity" />
-        <activity android:name=".Activities.Friends.FriendsActivity" />
-        <activity android:name=".Activities.Login.SignUpActivity"></activity>
+        <activity
+            android:name=".Activities.Entries.EntriesActivity"
+            android:theme="@style/EntriesTheme" />
+        <activity android:name=".Activities.Friends.FriendsActivity"
+            android:theme="@style/FriendsTheme"/>
+        <activity android:name=".Activities.Login.SignUpActivity" />
+        <activity android:name=".Activities.AboutUsActivity"></activity>
     </application>
 
 </manifest>

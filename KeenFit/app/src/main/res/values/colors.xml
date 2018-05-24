@@ -7,4 +7,25 @@
     <color name="colorLightGrey">#dfdfdf</color>
     <color name="colorClear">#000fff00</color>
 
+    <!--pink-->
+    <color name="addPrimary">#f8bbd0</color>
+    <color name="addPrimaryDark">#d6386d</color>
+    <color name="addAccent">#ba68c8</color>
+
+    <!--Blue-->
+    <color name="entryPrimary">#93c4ff</color>
+    <color name="entryPrimaryDark">#0d78f9</color>
+    <color name="entryPrimaryDarker">#0049a1</color>
+    <color name="entryAccent">#ba68c8</color>
+
+    <!--purple-->
+    <color name="mealHistoryPrimary">#e4abfc</color>
+    <color name="mealHistoryPrimaryDark">#9B59b6</color>
+    <color name="mealHistoryPrimaryDarker">#76398f</color>
+    <color name="mealHistoryAccent">#feca8d</color>
+
+    <color name="friendsPrimary">#fedbb3</color>
+    <color name="friendsPrimaryDark">#fda641</color>
+    <color name="friendsAccent">#ba68c8</color>
+
 </resources>

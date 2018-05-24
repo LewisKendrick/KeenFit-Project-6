@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorLightGrey">
 
     <FrameLayout
         android:id="@+id/f_Topbar_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/friendsPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -35,6 +34,7 @@
         app:layout_constraintStart_toStartOf="@+id/f_Topbar_background"
         app:layout_constraintTop_toTopOf="@+id/f_Topbar_background"
         app:srcCompat="@drawable/icon_1" />
+
     <TextView
         android:id="@+id/f_Title_lbl"
         android:layout_width="0dp"
@@ -72,18 +72,18 @@
         android:id="@+id/f_List_Frame"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:listSelector="@android:color/transparent"
-        app:column="3"
-        app:row="4"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:background="#c8ffffff"
+        android:listSelector="@android:color/transparent"
+        app:column="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f_myfriends" />
+        app:layout_constraintTop_toBottomOf="@+id/f_myfriends"
+        app:row="4" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
@@ -101,7 +101,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:background="#c8ffffff"
+        android:background="@color/friendsPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,6 +113,13 @@
         <!--android:layout_height="match_parent"-->
         <!--app:timeout="500" />-->
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="STAY MOTIVATED"
+            android:textAlignment="center"
+            android:textSize="30sp" />
     </FrameLayout>
 
     <Button
@@ -121,7 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/friendsPrimaryDark"
         android:text="ADD FRIEND"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_frame" />
@@ -132,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorAccent"
+        android:background="@color/friendsPrimaryDark"
         android:text="Refresh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_frame" />
@@ -156,6 +163,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@color/friendsPrimary"
         android:text="ALL MEMBERS"
         app:layout_constraintBottom_toBottomOf="@+id/f_myfriends"
         app:layout_constraintEnd_toStartOf="@+id/f_myfriends"
@@ -169,6 +177,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
+        android:background="@color/friendsPrimary"
         android:text="Calories"
         app:layout_constraintBottom_toBottomOf="@+id/f_myfriends"
         app:layout_constraintEnd_toEndOf="@+id/f_Refresh_btn"

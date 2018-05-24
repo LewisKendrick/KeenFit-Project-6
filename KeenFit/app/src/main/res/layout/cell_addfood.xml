@@ -8,7 +8,6 @@
     <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="@+id/cell_foodName_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,10 +19,9 @@
         android:id="@+id/cell_foodName_txt"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="TextView"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,17 +33,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="110dp" />
+        app:layout_constraintGuide_begin="102dp" />
 
     <TextView
         android:id="@+id/cals_lbl"
         android:layout_width="100dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
         android:text="Calories:"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/cell_calories_txt"
         app:layout_constraintStart_toStartOf="@+id/cell_foodName_txt"
         app:layout_constraintTop_toBottomOf="@+id/cell_foodName_txt" />
 
@@ -53,8 +52,9 @@
         android:id="@+id/cell_calories_txt"
         android:layout_width="130dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:background="@android:color/white"
         android:text="TextView"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/cals_lbl"
         app:layout_constraintStart_toEndOf="@+id/cals_lbl"
@@ -64,8 +64,7 @@
         android:id="@+id/cell_brandName_txt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:background="@android:color/white"
         android:text="USDA"
         android:textAlignment="center"
         android:textColor="@android:color/black"

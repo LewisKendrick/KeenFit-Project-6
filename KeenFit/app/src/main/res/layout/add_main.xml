@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/addPrimary"
     android:fitsSystemWindows="true"
     tools:context=".Activities.AddFood.AddActivity">
 
     <RelativeLayout
-        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="64dp">
+        android:layout_height="64dp"
+        android:background="@color/addPrimaryDark">
 
     </RelativeLayout>
 
@@ -25,14 +26,13 @@
         app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 
     <com.mancj.materialsearchbar.MaterialSearchBar
-        style="@style/MaterialSearchBarLight"
         android:id="@+id/searchBar"
-        app:mt_navIconEnabled="true"
-        app:mt_placeholder="Find Food"
+        style="@style/MaterialSearchBarLight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        />
+        app:mt_navIconEnabled="true"
+        app:mt_placeholder="Find Food" />
 
     <ProgressBar
         android:id="@+id/progressBar"
