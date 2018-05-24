@@ -10,8 +10,6 @@ import android.widget.TextView;
 import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 import com.example.kendricklewis.keenfit.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class AddFood_Adapter extends BaseAdapter

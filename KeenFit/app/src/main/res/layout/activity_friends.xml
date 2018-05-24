@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <FrameLayout
+        android:id="@+id/f_Topbar_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </FrameLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+    <ImageButton
+        android:id="@+id/f_menuBtn"
+        android:layout_width="91dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/f_Topbar_background"
+        app:layout_constraintStart_toStartOf="@+id/f_Topbar_background"
+        app:layout_constraintTop_toTopOf="@+id/f_Topbar_background"
+        app:srcCompat="@drawable/icon_1" />
+    <TextView
+        android:id="@+id/f_Title_lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="KeenFit"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/f_Greeting_lbl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="FRIENDS"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/f_Topbar_background"
+        app:layout_constraintEnd_toEndOf="@+id/f_Topbar_background"
+        app:layout_constraintStart_toStartOf="@+id/f_Topbar_background"
+        app:layout_constraintTop_toBottomOf="@+id/f_Title_lbl" />
+
+
+    <co.ceryle.fitgridview.FitGridView
+        android:id="@+id/f_List_Frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:listSelector="@android:color/transparent"
+        app:column="3"
+        app:row="4"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:background="#c8ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_myfriends" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="133dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="526dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/text_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#c8ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_Greeting_lbl">
+
+        <!--<com.tomer.fadingtextview.FadingTextView-->
+        <!--android:id="@+id/fadingTextView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:timeout="500" />-->
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/f_AddFriend_btn"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="ADD FRIEND"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_frame" />
+
+    <Button
+        android:id="@+id/f_Refresh_btn"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="Refresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_frame" />
+
+    <ImageView
+        android:id="@+id/f_myfriends"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/f_Refresh_btn"
+        app:layout_constraintStart_toStartOf="@+id/f_AddFriend_btn"
+        app:layout_constraintTop_toBottomOf="@+id/text_frame"
+        app:srcCompat="@drawable/icon_myfriends" />
+
+    <Button
+        android:id="@+id/f_Show_btn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="ALL MEMBERS"
+        app:layout_constraintBottom_toBottomOf="@+id/f_myfriends"
+        app:layout_constraintEnd_toStartOf="@+id/f_myfriends"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/f_AddFriend_btn"
+        app:layout_constraintTop_toBottomOf="@+id/sortby_lbl" />
+
+    <Button
+        android:id="@+id/f_Sort_btn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Calories"
+        app:layout_constraintBottom_toBottomOf="@+id/f_myfriends"
+        app:layout_constraintEnd_toEndOf="@+id/f_Refresh_btn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/f_myfriends" />
+
+    <TextView
+        android:id="@+id/sortby_lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sort By:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/f_Sort_btn"
+        app:layout_constraintEnd_toEndOf="@+id/f_Sort_btn"
+        app:layout_constraintStart_toStartOf="@+id/f_Sort_btn" />
+
+    <TextView
+        android:id="@+id/show_lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Show:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/f_Show_btn"
+        app:layout_constraintEnd_toEndOf="@+id/f_Show_btn"
+        app:layout_constraintStart_toStartOf="@+id/f_Show_btn" />
+
+
+</android.support.constraint.ConstraintLayout>

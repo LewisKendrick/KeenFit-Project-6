@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import static com.example.kendricklewis.keenfit.Activities.AddFood.AddActivity.*;
+import static com.example.kendricklewis.keenfit.Activities.Entries.EntriesActivity.entryMeals;
+import static com.example.kendricklewis.keenfit.Activities.Entries.Entries_ListFragment.e_selected;
 import static com.example.kendricklewis.keenfit.Activities.MealHistory.MealHistory_ListFragment.finalValues;
 import static com.example.kendricklewis.keenfit.Activities.MealHistory.MealHistory_ListFragment.selected;
 import static com.example.kendricklewis.keenfit.Fragments.FoodList_Fragment.selectedItem;
@@ -130,23 +132,30 @@ public class AddFood_DetailsActivity extends Activity
         {
             selectedMeal = allMeals.get(selectedItem);
         }
-        else if (!finalValues.isEmpty())
+        if (!finalValues.isEmpty())
         {
             selectedMeal = finalValues.get(selected);
         }
+        if (!entryMeals.isEmpty())
+        {
+            selectedMeal = entryMeals.get(e_selected);
+        }
 
-        foodNameTextView.setText(selectedMeal.getName());
-        brandNameTextView.setText(selectedMeal.getBrandname());
-        calsTextView.setText(String.format("%s", selectedMeal.getCalories()));
-        carbsTextView.setText(String.format("%s", selectedMeal.getCarbs()));
-        cholesTextView.setText(String.format("%s", selectedMeal.getCholesterol()));
-        dietTextView.setText(String.format("%s", selectedMeal.getDietary()));
-        totalFatTextView.setText(String.format("%s", selectedMeal.getFat()));
-        proteinTextView.setText(String.format("%s", selectedMeal.getProtein()));
-        saturatedTextView.setText(String.format("%s", selectedMeal.getSaturatedfat()));
-        SodiumTextView.setText(String.format("%s", selectedMeal.getSodium()));
-        SugarTextView.setText(String.format("%s", selectedMeal.getSugars()));
-        servingsTextView.setText(String.format("%d", servingCount));
+        if(selectedMeal != null)
+        {
+            foodNameTextView.setText(selectedMeal.getName());
+            brandNameTextView.setText(selectedMeal.getBrandname());
+            calsTextView.setText(String.format("%s", selectedMeal.getCalories()));
+            carbsTextView.setText(String.format("%s", selectedMeal.getCarbs()));
+            cholesTextView.setText(String.format("%s", selectedMeal.getCholesterol()));
+            dietTextView.setText(String.format("%s", selectedMeal.getDietary()));
+            totalFatTextView.setText(String.format("%s", selectedMeal.getFat()));
+            proteinTextView.setText(String.format("%s", selectedMeal.getProtein()));
+            saturatedTextView.setText(String.format("%s", selectedMeal.getSaturatedfat()));
+            SodiumTextView.setText(String.format("%s", selectedMeal.getSodium()));
+            SugarTextView.setText(String.format("%s", selectedMeal.getSugars()));
+            servingsTextView.setText(String.format("%d", servingCount));
+        }
 
     }
 }

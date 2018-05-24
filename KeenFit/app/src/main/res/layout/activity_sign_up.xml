@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGrey"
+    tools:context=".Activities.Login.SignUpActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/mainConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="13dp">
+
+
+        <TextView
+            android:id="@+id/s_SignUp_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Sign Up"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="36dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/s_profile_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/s_profile_image"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.123"
+            app:srcCompat="@drawable/icon_1" />
+
+        <Button
+            android:id="@+id/s_previous_btn"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Previous"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/s_profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/s_profile_image" />
+
+        <Button
+            android:id="@+id/s_next_btn"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Next"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@+id/s_profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/s_profile_image" />
+
+        <EditText
+            android:id="@+id/s_name_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="NAME"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/s_next_btn"
+            app:layout_constraintStart_toStartOf="@+id/s_previous_btn"
+            app:layout_constraintTop_toBottomOf="@+id/s_previous_btn" />
+
+        <EditText
+            android:id="@+id/s_email_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="EMAIL"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/s_next_btn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/s_previous_btn"
+            app:layout_constraintTop_toBottomOf="@+id/s_name_txt" />
+
+        <EditText
+            android:id="@+id/s_password_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/s_email_txt"
+            app:layout_constraintStart_toStartOf="@+id/s_email_txt"
+            app:layout_constraintTop_toBottomOf="@+id/s_email_txt" />
+
+        <EditText
+            android:id="@+id/s_secondPassword_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Confirm password"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/s_password_txt"
+            app:layout_constraintStart_toStartOf="@+id/s_password_txt"
+            app:layout_constraintTop_toBottomOf="@+id/s_password_txt" />
+
+        <Button
+            android:id="@+id/s_signup_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="SIGN UP"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/s_secondPassword_txt"
+            app:layout_constraintStart_toStartOf="@+id/s_secondPassword_txt"
+            app:layout_constraintTop_toBottomOf="@+id/s_secondPassword_txt" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -15,12 +15,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.kendricklewis.keenfit.Activities.AddFood.AddActivity;
-import com.example.kendricklewis.keenfit.Classes.CurrentUser;
-import com.example.kendricklewis.keenfit.Fragments.FoodList_Fragment;
-import com.example.kendricklewis.keenfit.HomeActivity;
 import com.example.kendricklewis.keenfit.R;
 
-import static com.example.kendricklewis.keenfit.Activities.LoginActivity.mCurrentUser;
+import static com.example.kendricklewis.keenfit.Activities.Login.LoginActivity.mCurrentUser;
 import static com.example.kendricklewis.keenfit.HomeActivity.currentUser;
 import static com.example.kendricklewis.keenfit.HomeActivity.profilePic_Array;
 

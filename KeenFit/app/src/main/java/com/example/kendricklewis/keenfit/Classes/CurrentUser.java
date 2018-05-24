@@ -1,29 +1,21 @@
 package com.example.kendricklewis.keenfit.Classes;
 
-import android.content.Context;
-import android.widget.Toast;
+import android.text.format.DateFormat;
 
-import com.example.kendricklewis.keenfit.Fragments.Summary_Fragment;
-import com.example.kendricklewis.keenfit.R;
-import com.google.firebase.database.DataSnapshot;
-
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.Calendar;
 
-import es.dmoral.toasty.Toasty;
-
-public class CurrentUser
+public class CurrentUser implements Serializable
 {
     private String name;
-    private String g_name;
     private int id_picture;
     private double weight;
     private Goal goals;
     private double current_Calories;
     private double average_daily;
     private double average_weekly;
-    private double average_byWeekly;
+    private double average_biWeekly;
     private ArrayList<Meal> meals;
 
     public CurrentUser()
@@ -37,14 +29,6 @@ public class CurrentUser
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getG_name() {
-        return g_name;
-    }
-
-    public void setG_name(String g_name) {
-        this.g_name = g_name;
     }
 
     public int getId_picture() {
@@ -71,16 +55,66 @@ public class CurrentUser
         this.goals = goals;
     }
 
-    public double getCurrent_Calories() {
-        return current_Calories;
+    public double getCurrent_Calories()
+    {
+        double totalCal = 0;
+        double totalMeals = 0;
+
+        Calendar today = Calendar.getInstance();
+        String selectedDateStr = DateFormat.format("yyyy/MM/dd", today).toString();
+
+        for (CurrentUser.Meal singleMeal : meals)
+        {
+            if(singleMeal.getDateAdded().equals(selectedDateStr))
+            {
+                totalCal += (singleMeal.getCalories() * singleMeal.getServings());
+                totalMeals = totalMeals + 1;
+            }
+        }
+
+        current_Calories =  totalCal;
+
+        if(current_Calories > 0)
+        {
+            return current_Calories;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public void setCurrent_Calories(double current_Calories) {
         this.current_Calories = current_Calories;
     }
 
-    public double getAverage_daily() {
-        return average_daily;
+    public double getAverage_daily()
+    {
+        double totalCal = 0;
+        double totalMeals = 0;
+
+        Calendar today = Calendar.getInstance();
+        String selectedDateStr = DateFormat.format("yyyy/MM/dd", today).toString();
+
+        for (CurrentUser.Meal singleMeal : meals)
+        {
+            if(singleMeal.getDateAdded().equals(selectedDateStr))
+            {
+                totalCal += (singleMeal.getCalories() * singleMeal.getServings());
+                totalMeals = totalMeals + 1;
+            }
+        }
+
+        average_daily =  totalCal / totalMeals;
+
+        if(current_Calories > 0)
+        {
+            return average_daily;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public void setAverage_daily(double average_daily) {
@@ -95,12 +129,12 @@ public class CurrentUser
         this.average_weekly = average_weekly;
     }
 
-    public double getAverage_byWeekly() {
-        return average_byWeekly;
+    public double getAverage_biWeekly() {
+        return average_biWeekly;
     }
 
-    public void setAverage_byWeekly(double average_byWeekly) {
-        this.average_byWeekly = average_byWeekly;
+    public void setAverage_biWeekly(double average_biWeekly) {
+        this.average_biWeekly = average_biWeekly;
     }
 
 
@@ -112,13 +146,31 @@ public class CurrentUser
         this.meals = meals;
     }
 
+    public int getMealsToday()
+    {
+        int totalMeals = 0;
+
+        Calendar today = Calendar.getInstance();
+        String selectedDateStr = DateFormat.format("yyyy/MM/dd", today).toString();
+
+        for (CurrentUser.Meal singleMeal : meals)
+        {
+            if(singleMeal.getDateAdded().equals(selectedDateStr))
+            {
+                totalMeals = totalMeals + 1;
+            }
+        }
+
+        return totalMeals;
+    }
+
     /*
     TODO: THIS IS MY GOALS CLASS
     Goals Class
 
      */
 
-    public static class Goal
+    public static class Goal implements Serializable
     {
         private double total_calories;
         private double total_carbs;
@@ -214,7 +266,7 @@ public class CurrentUser
 
      */
 
-    public static class Meal
+    public static class Meal implements Serializable
     {
         private String id;
         private String name;

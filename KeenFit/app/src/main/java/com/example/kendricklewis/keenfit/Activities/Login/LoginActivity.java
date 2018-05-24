@@ -1,4 +1,4 @@
-package com.example.kendricklewis.keenfit.Activities;
+package com.example.kendricklewis.keenfit.Activities.Login;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -52,6 +52,17 @@ public class LoginActivity extends AppCompatActivity
                 signInUser();
             }
         });
+
+        findViewById(R.id.l_SignUp_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent signUpIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(signUpIntent);
+            }
+        });
+
+
     }
 
     @Override

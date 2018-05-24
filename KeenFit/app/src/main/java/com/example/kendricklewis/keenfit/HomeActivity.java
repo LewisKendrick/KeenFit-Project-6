@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kendricklewis.keenfit.Activities.AddFood.AddActivity;
+import com.example.kendricklewis.keenfit.Activities.Entries.EntriesActivity;
+import com.example.kendricklewis.keenfit.Activities.Goals.GoalsActivity;
 import com.example.kendricklewis.keenfit.Activities.MealHistory.MealHistoryActivity;
 import com.example.kendricklewis.keenfit.Classes.CurrentUser;
 import com.example.kendricklewis.keenfit.Fragments.Summary_Fragment;
@@ -34,7 +36,7 @@ import java.util.ArrayList;
 
 import es.dmoral.toasty.Toasty;
 
-import static com.example.kendricklewis.keenfit.Activities.LoginActivity.mCurrentUser;
+import static com.example.kendricklewis.keenfit.Activities.Login.LoginActivity.mCurrentUser;
 import static com.example.kendricklewis.keenfit.Classes.CurrentUser.*;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
@@ -54,6 +56,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     //grabing all my user info
     public static CurrentUser currentUser = new CurrentUser();
 
+    //This holds all profile pic images and will be filled later
     public static ArrayList<Bitmap> profilePic_Array = new ArrayList<>();
 
 
@@ -209,12 +212,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.h_Entries_btn:
             {
-
+                Intent entriesIntent = new Intent(HomeActivity.this, EntriesActivity.class);
+                startActivity(entriesIntent);
                 break;
             }
 
             case R.id.h_Goals_btn:
             {
+                Intent goalsIntent = new Intent(HomeActivity.this, GoalsActivity.class);
+                startActivity(goalsIntent);
                 break;
             }
 
@@ -244,6 +250,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Bitmap image8 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_8);
         Bitmap image9 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_9);
         Bitmap image10 = BitmapFactory.decodeResource(getResources(),R.drawable.icon_10);
+
         profilePic_Array.add(image1);
         profilePic_Array.add(image2);
         profilePic_Array.add(image3);
@@ -267,7 +274,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 //Grab the info out of the firebase one at a time and fill
                 String name =            dataSnapshot.child("name").getValue(String.class);
-                String gName =           dataSnapshot.child("g_name").getValue(String.class);
                 Integer id_picture =     dataSnapshot.child("id_picture").getValue(Integer.class);
                 Double weight  =         dataSnapshot.child("weight").getValue(Double.class);
                 Double currentCals =     dataSnapshot.child("current_Calories").getValue(Double.class);
@@ -291,8 +297,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 //* Setting the information into my user summary *//
                 currentUser.setName(name);
 
-                currentUser.setG_name(gName);
-
                 currentUser.setId_picture(id_picture);
 
                 currentUser.setWeight(weight);
@@ -303,7 +307,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 currentUser.setAverage_weekly(averageWeekly);
 
-                currentUser.setAverage_byWeekly(averageByWeekly);
+                currentUser.setAverage_biWeekly(averageByWeekly);
 
                 //* Setting the goals*//
                 Goal updatedGoals = new Goal();
@@ -370,7 +374,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         String id =          aMeal.child("id").getValue(String.class);
                         String name =        aMeal.child("name").getValue(String.class);
                         String brandname =   aMeal.child("brandname").getValue(String.class);
-                        String dateAdded =   aMeal.child("date").getValue(String.class);
+                        String dateAdded =   aMeal.child("dateAdded").getValue(String.class);
 
                         Integer servings =   aMeal.child("servings").getValue(Integer.class);
 

@@ -34,6 +34,9 @@ dependencies {
     implementation 'com.github.mancj:MaterialSearchBar:0.7.6'
     implementation files('libs/commons-io-2.6.jar')
     implementation files('libs/picasso-2.5.2.jar')
+    implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4'
+    implementation 'com.tomer:fadingtextview:2.5'
+    implementation 'com.github.ceryle:FitGridView:v1.0.5'
 }
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
